@@ -1,8 +1,11 @@
 # App name: hotel Management System
 
+backend url: https://hotelservices.herokuapp.com
+
 ## features:
 
 login
+
 register
 
 guest can view all services
