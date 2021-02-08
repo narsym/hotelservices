@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +11,36 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+  background-color: aqua;
+  margin: 1%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+.guestServices {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.guestServices .card {
+  width: 30%;
+}
+
+.authenticate {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
