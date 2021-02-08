@@ -1,70 +1,125 @@
-# Getting Started with Create React App
+# App name: hotel Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## features:
 
-## Available Scripts
+login
+register
 
-In the project directory, you can run:
+guest can view all services
 
-### `npm start`
+guest can view services he bought
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+guest can view about his bill
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+staff can add service
 
-### `npm test`
+staff can view all services
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+staff can view services guest bought
 
-### `npm run build`
+staff can view guest details
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Architecture backend - MVC
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+models - contains db schemas
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+view - react takes care of this part
 
-### `npm run eject`
+controllers - contains function according to respective pages
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## frontend-
+Reactjs, Html, Css
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## backend -
+nodejs, mongodb, express 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Description - hotel management service. Can be used from either guest or staff. 
 
-## Learn More
+## Techincal questions- 
+### How long did you spend on the coding test?
+2 full days.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### What would you add to your solution if you had more time? If you didn't spend much time on the coding test then use this as an opportunity to explain what you would add.
+I would have test the backend api more rigorously. would have added more features. Would have made analytics look much better.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### What was the most useful feature that was added to the latest version of your chosen language/framework? Please include a snippet of code that shows how you've used it.
+The most useful feature is using props and array.map function. I have sent the id's of services and users all around the pages with these.
 
-### Code Splitting
+```
+const HisServices = (props) => {
+    
+    return (
+        <>{props.data.map((item, index) =>{
+            return(
+                <>
+                <HisService key = {index} data = {item}/>
+                </>
+            );
+        })}
+        </>
+    );
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### How would you track down a performance issue in production? Have you ever had to do this?
+I will do review the code. Honestly I have never encountered like this.
 
-### Analyzing the Bundle Size
+## API End points from backend - 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### authentication
+/authentication 
 
-### Making a Progressive Web App
+/login - post
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+/register - post
 
-### Advanced Configuration
+### staff 
+/staff
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+/addService - post
 
-### Deployment
+/availableServices - get
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+/getGuestDetails - post
 
-### `npm run build` fails to minify
+/seeAllGuests - get
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### guest
+/guest
+
+/seeServices - get
+
+/buyService - post
+
+/seeUsingServices - post
+
+/usingServiceStatus - post
+
+/checkout - post
+
+/updateStatus - post
+
+### analytics
+/analytics - get
+
+## Mongo db-
+functions used - find, findOne, findByIdAndUpdate, find({conditions})
+
+Mostly creating and reading capabilities are used.
+
+## Fontend-
+used reactjs for this purpose.
+
+Application mainly depends on array.map and props.
+
+### components 
+
+guest - Guest, HisService, HisServices, Service, Services
+
+staff - Staff, User, Users, UserDetails, Service, Services
+
+A404, Analytics, App, Authenticate, GuestNavbar, StaffNavbar
+
+
+

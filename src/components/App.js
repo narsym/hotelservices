@@ -9,7 +9,14 @@ import UserDetails from './staff/UserDetails';
 const App = () => {
     return (
         <>
-        <Authenticate/>
+        <Switch>
+            <Route exact path = '/' component= {Authenticate}/>
+            <Route exact path = '/staff' component= {Staff}/>
+            <Route exact path = '/guest' component= {Guest}/>
+            <Route exact path = '/analytics' component= {Analytics}/>
+            <Route exact path = '/userDetails' component = {UserDetails}/>
+            <Route path = '/A404' component = {A404}/>
+        </Switch>
         </>
     );
 }
